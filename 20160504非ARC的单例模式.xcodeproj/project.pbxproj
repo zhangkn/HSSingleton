@@ -15,6 +15,7 @@
 		E1E20D821CD9D8F2002FB7C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1E20D801CD9D8F2002FB7C7 /* LaunchScreen.storyboard */; };
 		E1E20D8D1CD9D8F2002FB7C7 /* _0160504_ARC_____Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E20D8C1CD9D8F2002FB7C7 /* _0160504_ARC_____Tests.m */; };
 		E1E20D981CD9D8F2002FB7C7 /* _0160504_ARC_____UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E20D971CD9D8F2002FB7C7 /* _0160504_ARC_____UITests.m */; };
+		E1E20DA81CD9D915002FB7C7 /* HSDataTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E20DA71CD9D915002FB7C7 /* HSDataTool.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,9 @@
 		E1E20D931CD9D8F2002FB7C7 /* 20160504非ARC的单例模式UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "20160504非ARC的单例模式UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1E20D971CD9D8F2002FB7C7 /* _0160504_ARC_____UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "_0160504_ARC_____UITests.m"; sourceTree = "<group>"; };
 		E1E20D991CD9D8F2002FB7C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1E20DA61CD9D915002FB7C7 /* HSDataTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSDataTool.h; sourceTree = "<group>"; };
+		E1E20DA71CD9D915002FB7C7 /* HSDataTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSDataTool.m; sourceTree = "<group>"; };
+		E1E20DAB1CD9F115002FB7C7 /* HSSingleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HSSingleton.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,10 +105,8 @@
 		E1E20D711CD9D8F2002FB7C7 /* 20160504非ARC的单例模式 */ = {
 			isa = PBXGroup;
 			children = (
-				E1E20D751CD9D8F2002FB7C7 /* AppDelegate.h */,
-				E1E20D761CD9D8F2002FB7C7 /* AppDelegate.m */,
-				E1E20D781CD9D8F2002FB7C7 /* ViewController.h */,
-				E1E20D791CD9D8F2002FB7C7 /* ViewController.m */,
+				E1E20DA51CD9D902002FB7C7 /* Other */,
+				E1E20DAA1CD9D93E002FB7C7 /* Controller */,
 				E1E20D7B1CD9D8F2002FB7C7 /* Main.storyboard */,
 				E1E20D7E1CD9D8F2002FB7C7 /* Assets.xcassets */,
 				E1E20D801CD9D8F2002FB7C7 /* LaunchScreen.storyboard */,
@@ -138,6 +140,35 @@
 				E1E20D991CD9D8F2002FB7C7 /* Info.plist */,
 			);
 			path = "20160504非ARC的单例模式UITests";
+			sourceTree = "<group>";
+		};
+		E1E20DA51CD9D902002FB7C7 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				E1E20D751CD9D8F2002FB7C7 /* AppDelegate.h */,
+				E1E20D761CD9D8F2002FB7C7 /* AppDelegate.m */,
+				E1E20DA91CD9D91F002FB7C7 /* Tool */,
+			);
+			name = Other;
+			sourceTree = "<group>";
+		};
+		E1E20DA91CD9D91F002FB7C7 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				E1E20DA61CD9D915002FB7C7 /* HSDataTool.h */,
+				E1E20DA71CD9D915002FB7C7 /* HSDataTool.m */,
+				E1E20DAB1CD9F115002FB7C7 /* HSSingleton.h */,
+			);
+			name = Tool;
+			sourceTree = "<group>";
+		};
+		E1E20DAA1CD9D93E002FB7C7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E1E20D781CD9D8F2002FB7C7 /* ViewController.h */,
+				E1E20D791CD9D8F2002FB7C7 /* ViewController.m */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,6 +303,7 @@
 			files = (
 				E1E20D7A1CD9D8F2002FB7C7 /* ViewController.m in Sources */,
 				E1E20D771CD9D8F2002FB7C7 /* AppDelegate.m in Sources */,
+				E1E20DA81CD9D915002FB7C7 /* HSDataTool.m in Sources */,
 				E1E20D741CD9D8F2002FB7C7 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -411,6 +443,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_MODULES_AUTOLINK = YES;
 				INFOPLIST_FILE = "20160504非ARC的单例模式/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hisunpay.www.-0160504-ARC-----";
@@ -422,6 +456,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_MODULES_AUTOLINK = YES;
 				INFOPLIST_FILE = "20160504非ARC的单例模式/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hisunpay.www.-0160504-ARC-----";
