@@ -11,5 +11,5 @@
 
 @interface HSDataTool : UIView<NSCopying>
 //+ (instancetype)shareDataTool;
-HSSingletonH;
+HSSingletonH(DataTool);
 @end

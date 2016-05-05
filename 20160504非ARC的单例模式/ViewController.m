@@ -22,17 +22,18 @@
 //    [tool0 release];
 //    NSLog(@"%p",tool0);
 //单例对象已经被释放
-    NSLog(@"%p",[HSDataTool shareInsatnce]);//[HSDataTool init]: message sent to deallocated instance 0x786ed580
-    HSDataTool *tool1 = [HSDataTool shareInsatnce];
+    NSLog(@"%p",[HSDataTool shareDataTool]);//[HSDataTool init]: message sent to deallocated instance 0x786ed580
+    HSDataTool *tool1 = [HSDataTool shareDataTool];
+#if !__has_feature(objc_arc)
     [tool1 release];
-    
-    NSLog(@"%p",[HSDataTool shareInsatnce]);
-    NSLog(@"%p",[HSDataTool shareInsatnce]);
-    NSLog(@"%p",[[HSDataTool shareInsatnce]copy]);//-[HSDataTool copy]: message sent to deallocated instance 0x9f01af0
-    [[HSDataTool shareInsatnce]release];
+#endif
+    NSLog(@"%p",[HSDataTool shareDataTool]);
+    NSLog(@"%p",[HSDataTool shareDataTool]);
+    NSLog(@"%p",[[HSDataTool shareDataTool]copy]);//-[HSDataTool copy]: message sent to deallocated instance 0x9f01af0
+
     HSDataTool *tool = [[HSDataTool alloc]init];
     NSLog(@"%@",tool);
-    NSLog(@"%p",[HSDataTool shareInsatnce]);
+    NSLog(@"%p",[HSDataTool shareDataTool]);
 
 
     
