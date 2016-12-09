@@ -9,7 +9,47 @@
 #import "HSDataTool.h"
 
 @implementation HSDataTool
-HSSingletonM(DataTool)
+//HSSingletonM(DataTool)
+
+static id _instance;
++(instancetype)shareDataTool{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _instance = [[self alloc]init];
+    });
+    return _instance;
+}
+
+- (id)copyWithZone:(NSZone *)zone{
+    return _instance;
+}
++ (instancetype)allocWithZone:(struct _NSZone *)zone{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _instance = [super allocWithZone:zone];
+    });
+    return _instance;
+}
+#pragma mark - MRC环境的适配：重写
+/*
+ Decrements the receiver’s reference count.
+ The receiver is sent a dealloc message when its reference count reaches 0.
+ */
+#if !__has_feature(objc_arc)
+- (oneway void)release{
+}
+- (instancetype)retain{
+    return self;
+}
+- (NSUInteger)retainCount{
+    return 1;
+}
+- (instancetype)autorelease{
+    return self;
+}
+#endif
+
+
 
 
 
